@@ -212,7 +212,7 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label">Tên miền:</label>
 								<div class="col-sm-6">
-									<select class="form-control" >
+									<select class="form-control ten_mien">
 										<option>Chọn tên miền</option>
 										<option value="1">http://namnonglam.edu.vn</option>
 										<option value="2">http://hadocentrosagardenquan10tphcm.com</option>
@@ -300,9 +300,10 @@
 	$(document).ready(function () 
 	{
       // Ajax
-      $('.Supplier_Artist_Account_ID').on('change', function () 
+      $('.ten_mien').on('change', function () 
       {
-      	var id =  $('.Supplier_Artist_Account_ID option:selected').val();
+      	var id =  $('.ten_mien option:selected').val();
+      	alert(id)
       	$.ajax({
       		url : "/libs/json/data_doi_tac.json",
       		type : "GET",
