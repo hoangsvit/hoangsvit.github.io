@@ -213,7 +213,11 @@
 								<label class="col-sm-3 control-label">Tên miền:</label>
 								<div class="col-sm-6">
 									<select class="form-control" >
-										<option></option>
+										<option>Chọn tên miền</option>
+										<option value="1">http://namnonglam.edu.vn</option>
+										<option value="2">http://hadocentrosagardenquan10tphcm.com</option>
+										<option value="3">http://hoangphunhatrang.org</option>
+										<option value="4">http://lancasterlincolnpkd.net</option>
 									</select>
 								</div>
 								<div class="col-sm-3">
@@ -292,7 +296,29 @@
 </div><!-- #app-customizer -->
 <!-- Begin Check Đối Tác -->
 <script type="text/javascript">
-	
+	// Get info Artist
+	$(document).ready(function () 
+	{
+      // Ajax
+      $('.Supplier_Artist_Account_ID').on('change', function () 
+      {
+      	var id =  $('.Supplier_Artist_Account_ID option:selected').val();
+      	$.ajax({
+      		url : "/libs/json/data_doi_tac.json",
+      		type : "GET",
+      		dateType:"JSON",
+      		data : {
+      			id : id,
+      		},
+      		success : function (data){
+      			var json = JSON.parse(data);
+      			$('#Artist_Stage_NM').val(json.Artist_Stage_NM);
+      			
+                
+            }
+        });
+      });
+  });
 </script>
 <!-- End Check Đối Tác -->
 <!-- build:js ../assets/js/core.min.js -->
