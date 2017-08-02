@@ -477,7 +477,10 @@
 
 <!-- Begin Check Đối Tác -->
 <script type="text/javascript">
- 	$('select').select2();
+	$(".ten_mien").select2({
+		placeholder: "Select a state",
+		allowClear: true
+	});
 	// Get info Artist
 	$(document).ready(function() 
 	{
