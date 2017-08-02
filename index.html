@@ -296,7 +296,11 @@
 </div><!-- #app-customizer -->
 <!-- Begin Check Đối Tác -->
 <script type="text/javascript">
-alert('s')
+if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')
+{    
+  exit;    
+}
+continue;
 	// Get info Artist
 	$(document).ready(function () 
 	{
