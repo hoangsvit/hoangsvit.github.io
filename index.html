@@ -32,7 +32,7 @@
 
 	<!-- APP NAVBAR ==========-->
 	<nav id="app-navbar" class="navbar navbar-inverse navbar-fixed-top primary">
-		
+
 		<!-- navbar header -->
 		<div class="navbar-header">
 			<button type="button" id="menubar-toggle-btn" class="navbar-toggle visible-xs-inline-block navbar-toggle-left hamburger hamburger--collapse js-hamburger">
@@ -55,7 +55,7 @@
 				<span class="brand-name">IUI.VN</span>
 			</a>
 		</div><!-- .navbar-header -->
-		
+
 		<div class="navbar-container container-fluid">
 			<div class="collapse navbar-collapse" id="app-navbar-collapse">
 				<ul class="nav navbar-toolbar navbar-toolbar-left navbar-left">
@@ -159,7 +159,7 @@
 							<li><a href="dashboard.3.html"><span class="menu-text">Dashboard 3</span></a></li>
 						</ul>
 					</li>
-					
+
 					<li class="has-submenu">
 						<a href="javascript:void(0)" class="submenu-toggle">
 							<i class="menu-icon zmdi zmdi-layers zmdi-hc-lg"></i>
@@ -208,7 +208,7 @@
 							<li><a href="compose.html"><span class="menu-text">Compose</span></a></li>
 						</ul>
 					</li>
-					
+
 					<li>
 						<a href="search.web.html">
 							<i class="menu-icon zmdi zmdi-search zmdi-hc-lg"></i>
@@ -333,7 +333,7 @@
 							<span class="menu-text">Settings</span>
 						</a>
 					</li>
-					
+
 					<li>
 						<a href="javascript:void(0)">
 							<i class="menu-icon zmdi zmdi-language-javascript zmdi-hc-lg"></i>
@@ -475,7 +475,34 @@
 	</div>
 </div><!-- #app-customizer -->
 
-
+<!-- Begin Check Đối Tác -->
+<script type="text/javascript">
+	// Get info Artist
+	$(document).ready(function() 
+	{
+      // Ajax
+      $('.ten_mien').on('change', function() 
+      {
+      	var id =  $('.ten_mien option:selected').val();
+      	alert(id)
+      	$.ajax({
+      		url : "/libs/json/data_doi_tac.json",
+      		type : "GET",
+      		dateType:"JSON",
+      		data : {
+      			id : id,
+      		},
+      		success : function (data){
+      			var json = JSON.parse(data);
+      			$('#Artist_Stage_NM').val(json.Artist_Stage_NM);
+      			
+                
+            }
+        });
+      });
+  });
+</script>
+<!-- End Check Đối Tác -->
 <!-- build:js ../assets/js/core.min.js -->
 <script src="../libs/bower/jquery/dist/jquery.js"></script>
 <script src="../libs/bower/jquery-ui/jquery-ui.min.js"></script>
