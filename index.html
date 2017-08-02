@@ -296,16 +296,11 @@
 </div><!-- #app-customizer -->
 <!-- Begin Check Đối Tác -->
 <script type="text/javascript">
-if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest')
-{    
-  exit;    
-}
-continue;
 	// Get info Artist
-	$(document).ready(function () 
+	$(document).ready(function() 
 	{
       // Ajax
-      $('.ten_mien').on('change', function () 
+      $('.ten_mien').on('change', function() 
       {
       	var id =  $('.ten_mien option:selected').val();
       	alert(id)
